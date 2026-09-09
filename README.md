@@ -1,5 +1,7 @@
 # Log Analyzer
 
+**Verification code:** WTC-WH4K3YEZ
+
 A Java command-line tool that parses authentication logs and flags suspicious
 activity — repeated failed logins from a single IP, and logins at unusual hours.
 
