@@ -1,5 +1,9 @@
 package com.nolwazi.loganalyzer;
 
+import java.io.IOException;
+import java.nio.file.Path;
+import java.util.List;
+
 /**
  * Entry point for the Log Analyzer.
  *
@@ -13,8 +17,18 @@ package com.nolwazi.loganalyzer;
  */
 public class Main {
 
-    public static void main(String[] args) {
-        System.out.println("Log Analyzer - scaffold running.");
-        // TODO: wire up LogParser -> DetectionEngine -> Report
+    public static void main(String[] args) throws IOException {
+        System.out.println("Log Analyzer");
+
+        Path logFile = Path.of(args.length > 0 ? args[0] : "src/main/resources/sample-auth.log");
+        LogParser parser = new LogParser();
+        List<LogEntry> entries = parser.parse(logFile);
+
+        DetectionEngine engine = new DetectionEngine();
+        List<String> alerts = engine.detect(entries);
+
+        System.out.println("Parsed " + entries.size() + " log entries.");
+        System.out.println("Alerts found: " + alerts.size());
+        alerts.forEach(System.out::println);
     }
 }
