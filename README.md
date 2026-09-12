@@ -29,10 +29,10 @@ tool does under the hood.
 This is a work in progress, built incrementally:
 
 - [x] Project scaffold
-- [ ] Log parser (`LogParser`, `LogEntry`)
-- [ ] Detection engine (`DetectionEngine`)
-- [ ] Reporting output
-- [ ] Unit tests (JUnit 5)
+- [x] Log parser (`LogParser`, `LogEntry`)
+- [x] Detection engine (`DetectionEngine`)
+- [x] Reporting output
+- [x] Unit tests (JUnit 5)
 - [ ] Demo video
 
 ## Running it
@@ -48,4 +48,4 @@ _Link will go here once the tool is complete._
 
 ## Tech
 
-Java 17, Maven, JUnit 5.
+Java 26, Maven, JUnit 5.
